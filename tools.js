@@ -57,22 +57,12 @@
 			if(!frame) {
 				inTimer[i] = setTimeout( () => {
 
-					container.insertAdjacentHTML("beforeEnd", `<iframe src="${a.href}" id="${n}"></iframe><div></div>`);
+					container.insertAdjacentHTML("beforeEnd", `<iframe src="${a.href}" id="${n}"></iframe>`);
 					frame = document.getElementById(n);
 					frame.style.width = x;
 					frame.style.height = y;
 
-					const close = frame.nextElementSibling;
-
 					frame.onload = ()=> {
-
-						close.onmousedown = ()=> {
-							close.remove();
-							frame.remove();
-						}
-
-						close.style.display='block';
-
 						frame.contentWindow.document.body.insertAdjacentHTML('beforeEnd', stripstyle);
 						frame.style.display='block';
 
@@ -89,6 +79,7 @@
 					}
 				}, 250);
 			} else {
+				container.append(frame);
 				clearTimeout(outTimer[i]);
 			}
 		}
@@ -112,9 +103,7 @@
 			clearTimeout(inTimer[i]);
 			if(!e.buttons) {
 				outTimer[i] = setTimeout(()=> {
-					frame?.nextElementSibling?.remove();
 					frame?.remove();
-					frame = null;
 				}, 500);
 			}
 		});
