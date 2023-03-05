@@ -1,0 +1,246 @@
+.link-container {
+	position: relative;
+}
+
+.link-container button {
+	display:none;
+}
+
+.link-container iframe {
+	position:absolute;
+	top: 99%;
+	left: 0;
+	max-width: 90vw;
+	max-height: 90vw;
+	min-width: 100px;
+	min-height: 100px;
+	resize: both;
+	z-index: 100;
+	display: none;
+}
+
+.link-container iframe.right, .link-container iframe.right + div {
+	right: 0;
+	left: auto;
+}
+
+.link-container iframe.bottom, .link-container iframe.bottom + div  {
+	bottom:100%;
+	top: auto;
+}
+
+.link-container iframe + div {
+	display: none;
+	position: absolute;
+	left: 0;
+	padding: 10px;
+	z-index: 101;
+	cursor: pointer;
+	font-weight: bold;
+	background: #000;
+	border-radius: 20px;
+	top: 100%;
+}
+
+.link-container iframe + div:after {
+	content: "X";
+	display: block;
+	line-height: 1;
+	color: #FFF; 
+}
+
+@media screen and (max-width: 500px) {
+	.link-container {
+		position: static;
+	}
+
+	.link-container iframe {
+		margin: 0 auto;
+		top: auto!important;
+		bottom: auto!important;
+		left: auto!important;
+		right: auto!important;
+	}
+
+	.link-container iframe + div {
+		top: auto!important;
+		bottom: auto!important;
+		transform: none;
+	}
+
+	.link-container button {
+		display:inline;
+	}
+}
+
+.search-input, #main-menu button.search-button {
+	display: inline-block;
+	position: static;
+	margin: 0;
+}
+
+.search-input {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+.search {
+	display: flex!important;
+	flex-wrap: wrap;
+	height: auto;
+}
+
+.search select {
+	width: 100%;
+	font-size: 15px;
+	display: block;
+	border-radius: 4px;
+}
+
+.search select option {
+	padding: 4px;
+	margin: 0;
+	height: 20px;	
+}
+
+
+#ctl00_MainContent_TableList, #ctl00_MainContent_TableList tbody, #ctl00_MainContent_CheckBoxList_SearchEngine, #ctl00_MainContent_CheckBoxList_SearchEngine tbody {
+	display: block;
+}
+
+#ctl00_MainContent_TableList tr, #ctl00_MainContent_CheckBoxList_SearchEngine tr {
+	display:block;
+}
+
+#ctl00_MainContent_TableList tr td, #ctl00_MainContent_CheckBoxList_SearchEngine tr td {
+	float: left;
+	white-space: nowrap;
+	min-width: 20%;
+}
+
+#ctl00_MainContent_SearchOutput {
+	display: block;
+	clear: both;
+}
+
+#main-menu.old {
+	background-size: 397px 1050px;
+}
+
+#wrapper {
+	min-width: 0;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr {
+	border-color: #999999;
+	border-width: 1px;
+	border-style: Solid;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:first-child {
+	position: sticky;
+	top: -1px;
+	z-index: 100;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(:first-child) > td:first-child {
+	cursor: pointer;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(:first-child) > td:first-child:after {
+	content:"☐";
+	margin-left: 5px;
+	font-size: 20px;
+	position: relative;
+	top: 2px;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr.selected > td:first-child:after {
+	content:"☑";
+}
+
+#ctl00_MainContent_GridViewArchetypes div {
+	white-space: nowrap;
+}
+
+tr:nth-child(2n) {
+	background-color: #FFFFFF!important;
+}
+
+tr:nth-child(2n+1):not(:first-child) {
+	background-color: #CCCCCC!important;
+}
+
+tr.selected:nth-child(2n) {
+	background-color: lightgreen!important;
+}
+
+tr.selected:nth-child(2n+1) {
+	background-color: green!important;
+}
+
+
+tr:not(.selected) > td .conflict, tr:not(.selected).conflict > td:first-child {
+	color: red;
+}
+
+tr:not(.selected) > td .conflict-light, tr:not(.selected).conflict-light > td:first-child {
+	color: orange;
+}
+
+.hide-conflicts tr.conflict:not(.selected) {
+	display: none;
+}
+
+#ctl00_MainContent_GridViewArchetypes {
+	position: relative;
+}
+
+.hideshow {
+	float: right;
+}
+
+.hideshow:before {
+	content: "Hide Conflicts";
+}
+
+
+.hide-conflicts .hideshow:before {
+	content: "Show Conflicts";
+}
+
+.archetype-suggestions {
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	color: black;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.archetype-suggestions > div {
+	padding: 2px;
+}
+
+.archetype-suggestions > div:hover {
+	cursor: pointer;
+	background: blue;
+	color: white;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(:first-child) td:nth-child(2) {
+	position: relative;
+	padding-right: 66px;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(:first-child) td button.save-btn {
+	position: absolute;
+	top: 0;
+	right: 33px;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(:first-child) td button.delete-btn {
+	position: absolute;
+	top: 0;
+	right: 3px;
+}
