@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "AoN tools",
   "version": "0.9",
 
@@ -12,6 +12,7 @@
   "content_scripts": [
     {
       "matches": ["https://aonprd.com/*"],
+      "run_at": "document_end",
       "js": ["tools.js"],
       "css": ["tools.css"]	
     }
