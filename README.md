@@ -3,10 +3,11 @@ Browser extension for ease of using the Archives of Nethys 1st edition Pathfinde
 
 # Instructions
 Download by pressing the green "Code" button and "Download ZIP", then add to your browser of choice.
-On Firefox: 
+On Firefox:
+- Unpack the ZIP, then re-ZIP only the files (there has to be a better way but IDK)
 - Go to "about:debugging" (just put it in the address bar) 
 - Select "This Firefox" from the sidebar on the left
-- Click "Load Temporary Add-on" and select the zip
+- Click "Load Temporary Add-on" and select the re-ZIP you made
 - You have to do this every time you restart Firefox
 
 On Chrome:
