@@ -46,6 +46,17 @@
 
 	const links = document.querySelectorAll('#main :not(h2, h2 > span) > a:not(.external-link)');
 
+	function showFrame(frame) {
+		frame.style.width = x;
+		frame.style.height = y;
+		frame.style.display = "block";						
+		const inWindowB = frame.getBoundingClientRect().top + parseInt(y) <= (window.innerHeight + window.scrollY || document.documentElement.clientHeight + window.scrollY);
+		const inWindowR = frame.getBoundingClientRect().left + parseInt(x)  <= (window.innerWidth + window.scrollX || document.documentElement.clientWidth + window.scrollX);
+
+		frame.classList.toggle('bottom', !inWindowB);
+		frame.classList.toggle('right', !inWindowR);
+	}
+
 	links.forEach( (a, i) => {
 		let n = 'Frame' + i;
 		a.insertAdjacentHTML('beforeBegin', '<span class="link-container"></span>');
@@ -56,32 +67,23 @@
 		const show = function(e) {
 			if(!frame) {
 				inTimer[i] = setTimeout( () => {
-
 					container.insertAdjacentHTML("beforeEnd", `<iframe src="${a.href}" id="${n}"></iframe>`);
 					frame = document.getElementById(n);
-					frame.style.width = x;
-					frame.style.height = y;
-
 					frame.onload = ()=> {
 						frame.contentWindow.document.body.insertAdjacentHTML('beforeEnd', stripstyle);
-						frame.style.display='block';
-
-						const inWindowB = frame.getBoundingClientRect().top + parseInt(y) <= (window.innerHeight + window.scrollY || document.documentElement.clientHeight + window.scrollY);
-						const inWindowR = frame.getBoundingClientRect().left + parseInt(x)  <= (window.innerWidth + window.scrollX || document.documentElement.clientWidth + window.scrollX);
-
-						frame.classList.toggle('bottom', !inWindowB);
-						frame.classList.toggle('right', !inWindowR);
-
+						frame.classList.add('loaded');
 						frame.contentWindow.addEventListener("resize", ()=> {
 							x = frame.style.width;
 							y = frame.style.height; 
 						});
+						showFrame(frame);
 					}
 				}, 250);
 			} else {
-				container.append(frame);
+				if(frame.classList.contains('loaded')) showFrame(frame);
 				clearTimeout(outTimer[i]);
 			}
+
 		}
 
 		container.prepend(a);
@@ -103,7 +105,7 @@
 			clearTimeout(inTimer[i]);
 			if(!e.buttons) {
 				outTimer[i] = setTimeout(()=> {
-					frame?.remove();
+					if(frame) frame.style.display = "none";
 				}, 500);
 			}
 		});
@@ -489,4 +491,3 @@
 	}
 	
 })();
-
