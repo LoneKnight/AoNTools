@@ -17,6 +17,11 @@ On Chrome:
 - Click "Load unpacked" and select the unpacked folder
 - Chrome will ask you if you want to keep using it on every restart
 
+Using a user script add-on like Greasmonkey for Firefox or "User JavaScript and CSS" for Chrome:
+- Click on tools.js and tools.css, copy over their content, and set the URL match based on the match value of manifest.json.
+- If your user script add-on of choice does not have a separate CSS block, you can just do something like... document.body.insertAdjacentHTML('beforeEnd', `<style>css here</style>`);
+- That's it, should be working
+
 # Features
 You can hover over links for a preview, and unlike the AoN2e version you can scroll and click on links, as well as resize the window. There is a slight delay on it so that you don't open up 20 windows with one swipe on the search page.
 
