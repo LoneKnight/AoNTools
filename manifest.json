@@ -1,9 +1,9 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "AoN tools",
-  "version": "1.0",
+  "version": "0.9",
 
-  "description": "Numerous small improvements to AoN",
+  "description": "Numerous tools and improvements to AoN",
 
   "icons": {
     "48": "favicon.ico"
@@ -13,7 +13,7 @@
     {
       "matches": ["https://aonprd.com/*"],
       "js": ["tools.js"],
-	  "css": ["tools.css"]	
+      "css": ["tools.css"]	
     }
   ]
 }
