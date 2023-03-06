@@ -163,28 +163,30 @@
 	white-space: nowrap;
 }
 
-tr:nth-child(2n) {
+#ctl00_MainContent_GridViewArchetypes tr:nth-child(2n) {
 	background-color: #FFFFFF!important;
 }
 
-tr:nth-child(2n+1):not(:first-child) {
+#ctl00_MainContent_GridViewArchetypes tr:nth-child(2n+3) {
 	background-color: #CCCCCC!important;
 }
 
-tr.selected:nth-child(2n) {
+#ctl00_MainContent_GridViewArchetypes tr.selected:nth-child(2n) {
 	background-color: lightgreen!important;
 }
 
-tr.selected:nth-child(2n+1) {
+#ctl00_MainContent_GridViewArchetypes tr.selected:nth-child(2n+3) {
 	background-color: green!important;
 }
 
 
-tr:not(.selected) > td .conflict, tr:not(.selected).conflict > td:first-child {
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected) > td .conflict, 
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected).conflict > td:first-child {
 	color: red;
 }
 
-tr:not(.selected) > td .conflict-light, tr:not(.selected).conflict-light > td:first-child {
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected) > td .conflict-light,
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected).conflict-light > td:first-child {
 	color: orange;
 }
 
