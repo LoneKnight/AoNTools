@@ -74,9 +74,9 @@
 }
 
 .search-input, #main-menu button.search-button {
-	display: inline-block;
-	position: static;
-	margin: 0;
+	display: inline-block!important;
+	position: static!important;
+	margin: 0!important;
 }
 
 .search-input {
@@ -87,7 +87,7 @@
 .search {
 	display: flex!important;
 	flex-wrap: wrap;
-	height: auto;
+	height: auto!important;
 }
 
 .search select {
