@@ -180,14 +180,14 @@
 }
 
 
-#ctl00_MainContent_GridViewArchetypes tr:not(.selected) > td .conflict, 
-#ctl00_MainContent_GridViewArchetypes tr:not(.selected).conflict > td:first-child {
-	color: red;
-}
-
 #ctl00_MainContent_GridViewArchetypes tr:not(.selected) > td .conflict-light,
 #ctl00_MainContent_GridViewArchetypes tr:not(.selected).conflict-light > td:first-child {
 	color: orange;
+}
+
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected) > td .conflict, 
+#ctl00_MainContent_GridViewArchetypes tr:not(.selected).conflict > td:first-child {
+	color: red;
 }
 
 .hide-conflicts tr.conflict:not(.selected) {
